@@ -1,0 +1,2 @@
+module PracticaVariablesHelper
+end

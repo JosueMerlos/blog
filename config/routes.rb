@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+  
+  get 'practica_render/index'
+  get 'practica_render/index_dos'
 
+  resources :seguridad_usuarios
   get 'home/index'
   get 'home/parametro'
   get 'ayuda/index'
+  get 'ayuda/editar'
+  get 'practica_ruby/index'
+  get 'practica_variables/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

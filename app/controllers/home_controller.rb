@@ -1,8 +1,6 @@
 # controlador para el home
 class HomeController < ApplicationController
   def index
-  	id = params[:id]
-  	render text: id
   end
 
   def parametro

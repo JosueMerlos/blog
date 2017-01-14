@@ -1,5 +1,10 @@
 class AyudaController < ApplicationController
+	layout 'administracion', except: [:editar]
+  
   def index
+  end
+
+  def editar
   end
 
   def pagina

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Seguridad Usuarios</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @seguridad_usuarios.each do |seguridad_usuario| %>
+      <tr>
+        <td><%= seguridad_usuario.username %></td>
+        <td><%= seguridad_usuario.nombres %></td>
+        <td><%= seguridad_usuario.apellidos %></td>
+        <td><%= link_to 'Show', seguridad_usuario %></td>
+        <td><%= link_to 'Edit', edit_seguridad_usuario_path(seguridad_usuario) %></td>
+        <td><%= link_to 'Destroy', seguridad_usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Seguridad usuario', new_seguridad_usuario_path %>

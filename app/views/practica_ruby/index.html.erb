@@ -1,0 +1,34 @@
+<h1>PracticaRuby#index</h1>
+<p>Find me in app/views/practica_ruby/index.html.erb</p>
+<h2>Condicionales</h2>
+<%#= %>
+<%#  %>
+
+<p><%= 'Juan Fletes' %></p>
+<% es_admin = true %>
+<% if es_admin %>
+	<p><%= 'Tengo super poderes!!!' %></p>
+<% else %>
+	<p><%= 'Soy un usuario comun :(' %></p>
+<% end %>
+
+<p><%= 'Josue Merlos' %></p>
+<% es_admin = false %>
+<% if es_admin %>
+	<p><%= 'Tengo super poderes!!!' %></p>
+<% else %>
+	<p><%= 'Soy un usuario comun :(' %></p>
+<% end %>
+
+
+
+
+<h2>Codigo Ruby en Plantillas</h2>
+<% (1..5).each do |i| %>
+	<p>Hola Mundo: <%= i %></p>
+<% end %>
+<p>Suma: <%= 5 + 3 %> </p>
+<p>Suma de texto: <%= 'Hola ' + 'Mundo!' %> </p>
+<p><%= "Date: #{Date.today}" %></p>
+<p><%= "Time: #{Time.now}" %></p>
+<p><%= "Año: #{Date.today.year}, mes: #{Date.today.month}, dia: #{Date.today.day}" %></p>

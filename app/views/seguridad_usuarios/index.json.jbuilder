@@ -1,0 +1,1 @@
+json.array! @seguridad_usuarios, partial: 'seguridad_usuarios/seguridad_usuario', as: :seguridad_usuario

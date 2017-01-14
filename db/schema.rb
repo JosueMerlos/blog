@@ -11,9 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170114202718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "seguridad_usuarios", force: :cascade do |t|
+    t.string   "username",   limit: 20,                 null: false
+    t.string   "nombres",    limit: 250,                null: false
+    t.string   "apellidos",  limit: 250,                null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.boolean  "activo",                 default: true
+  end
+
+  add_index "seguridad_usuarios", ["username"], name: "index_seguridad_usuarios_on_username", unique: true, using: :btree
 
 end

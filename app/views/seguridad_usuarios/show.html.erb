@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @seguridad_usuario.username %>
+</p>
+
+<p>
+  <strong>Nombres:</strong>
+  <%= @seguridad_usuario.nombres %>
+</p>
+
+<p>
+  <strong>Apellidos:</strong>
+  <%= @seguridad_usuario.apellidos %>
+</p>
+
+<%= link_to 'Edit', edit_seguridad_usuario_path(@seguridad_usuario) %> |
+<%= link_to 'Back', seguridad_usuarios_path %>

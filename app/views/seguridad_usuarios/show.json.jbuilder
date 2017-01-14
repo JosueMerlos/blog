@@ -1,0 +1,1 @@
+json.partial! "seguridad_usuarios/seguridad_usuario", seguridad_usuario: @seguridad_usuario

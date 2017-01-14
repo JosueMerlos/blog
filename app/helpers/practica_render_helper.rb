@@ -1,0 +1,2 @@
+module PracticaRenderHelper
+end
