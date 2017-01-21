@@ -1,0 +1,35 @@
+<h1>Listing Entradas</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Titulo</th>
+      <th>Texto</th>
+      <th>Visitas</th>
+      <th>Publicado</th>
+      <th>Seguridad usuario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entradas.each do |entrada| %>
+      <tr>
+        <td><%= entrada.fecha %></td>
+        <td><%= entrada.titulo %></td>
+        <td><%= entrada.texto.truncate(50) %></td>
+        <td><%= entrada.visitas %></td>
+        <td><%= entrada.publicado ? 'Si' : 'No' %></td>
+        <td><%= entrada.seguridad_usuario.username %></td>
+        <td><%= link_to 'Show', entrada %></td>
+        <td><%= link_to 'Edit', edit_entrada_path(entrada) %></td>
+        <td><%= link_to 'Destroy', entrada, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entrada', new_entrada_path %>

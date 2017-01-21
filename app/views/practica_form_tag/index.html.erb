@@ -1,0 +1,28 @@
+<h1>PracticaFormTag#index</h1>
+<p>Find me in app/views/practica_form_tag/index.html.erb</p>
+<h2>Form Tag</h2>
+<article>
+	<%= form_tag('/subir_fichero', multi_part: true) do %>
+		<%= label_tag 'fichero', 'Seleccione un archivo' %>
+		<%= file_field_tag 'fichero' %>
+	<% end %>
+	<%= form_tag('/entradas', method: :put) do %>
+		<%= hidden_field_tag 'entrada_id' %>
+		<p>
+			<%= label_tag 'titulo', 'Título de la entrada' %>
+			<%= text_field_tag 'titulo' %>
+		</p>
+		<p>
+			<%= label_tag 'clave', 'Clave de la entrada' %>
+			<%= password_field_tag 'clave' %>
+		</p>
+		<p>
+			<%= label_tag 'color', 'Seleccione un color' %>
+			<%= color_field_tag 'color' %>
+		</p>
+		<p>
+			<%= button_tag 'guardar' %>
+		</p>
+		<p>Controles del formulario</p>
+	<% end %>
+</article> 

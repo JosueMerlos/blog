@@ -1,2 +1,16 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% @entradas.each do |entrada| %>	
+	<div class="blog-post">
+	  <h2 class="blog-post-title"><%= entrada.titulo %></h2>
+	  <p class="blog-post-meta"><%= entrada.fecha %> by <a href="#"><%= entrada.seguridad_usuario.username %></a></p>
+		<p>
+			<%= entrada.texto %>
+		</p>
+		<h3>Comentarios:</h3>
+		<article>
+			<% entrada.comentarios.each do |comentario| %>
+				<p>Por: <%= comentario.seguridad_usuario.username %> | <%= comentario.fecha %></p>
+				<p><%= comentario.texto %></p>
+			<% end %>
+		</article>
+	</div>
+<% end %>		

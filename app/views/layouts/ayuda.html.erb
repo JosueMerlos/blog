@@ -8,12 +8,10 @@
 </head>
 <body>
 
-<p>Ayuda Layout</p>
-
-<%= link_to_unless_current "INICIO", home_index_path %>
-<%= link_to_unless_current "AYUDA", ayuda_index_path %>
+<%= render 'layouts/shared/header' %>
 
 <%= yield %>
 
+<%= render 'layouts/shared/footer' %>
 </body>
 </html>

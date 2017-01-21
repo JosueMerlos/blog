@@ -2,6 +2,19 @@ source 'https://rubygems.org'
 
 gem 'bootstrap-sass'
 gem 'rubocop'
+
+# Devise is a flexible authentication solution for Rails based on Warden.
+gem 'devise'
+
+#track change to your model
+gem 'paper_trail'
+
+# Client Side Validations made easy for Ruby on Rails
+gem 'client_side_validations'
+
+# An ActiveModel extension that automatically strips all attributes of leading 
+gem "strip_attributes"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
 # Use postgresql as the database for Active Record

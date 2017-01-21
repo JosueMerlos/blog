@@ -1,6 +1,7 @@
 # controlador para el home
 class HomeController < ApplicationController
   def index
+  	@entradas = Entrada.all
   end
 
   def parametro

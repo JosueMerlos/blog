@@ -1,0 +1,22 @@
+<div class="blog-masthead">
+  <div class="container">
+    <nav class="blog-nav">
+      <%= link_to 'Inicio', home_index_url, { class: 'blog-nav-item' } %>
+      <%= link_to 'Ayuda', ayuda_index_path, { class: 'blog-nav-item' } %>
+      <%= link_to 'Usuarios', seguridad_usuarios_path, { class: 'blog-nav-item' } %>
+      <ul class="nav navbar-nav navbar-right">
+        <% if seguridad_usuario_signed_in? %>
+          <li><%= link_to current_seguridad_usuario.username, seguridad_usuario_path(current_seguridad_usuario) %></li>
+          <li><%= link_to 'salir', destroy_seguridad_usuario_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Iniciar Sesión', new_seguridad_usuario_session_path %></li>
+          <li><%= link_to 'Registrarse', new_seguridad_usuario_registration_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: (name=='notice' ? 'alert alert-success' : 'alert alert-danger' ) %>
+<% end %>

@@ -1,0 +1,32 @@
+<p>
+  <strong>Fecha:</strong>
+  <%= @entrada.fecha %>
+</p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @entrada.titulo %>
+</p>
+
+<p>
+  <strong>Texto:</strong>
+  <%= @entrada.texto %>
+</p>
+
+<p>
+  <strong>Visitas:</strong>
+  <%= @entrada.visitas %>
+</p>
+
+<p>
+  <strong>Publicado:</strong>
+  <%= @entrada.publicado ? 'Si' : 'No' %>
+</p>
+
+<p>
+  <strong>Seguridad usuario:</strong>
+  <%= @entrada.seguridad_usuario.username %>
+</p>
+
+<%= link_to 'Edit', edit_entrada_path(@entrada) %> |
+<%= link_to 'Back', entradas_path %>

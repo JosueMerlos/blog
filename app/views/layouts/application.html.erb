@@ -1,20 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Blog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Blog</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<p>Application Layout</p>
+    <%= render 'layouts/shared/header' %>
 
-<%= link_to_unless_current "INICIO", home_index_path %>
-<%= link_to_unless_current "AYUDA", ayuda_index_path %>
-<%= link_to_unless_current "RENDER", practica_render_index_path %>
+    <div class="container">
+      <div class="blog-header">
+        <h1 class="blog-title">Blog de Ruby on Rails</h1>
+        <p class="lead blog-description">El maravilloso mundo del desarrollo con Ruby on Rails.</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+          <%= yield %>
+        </div><!-- /.blog-main -->
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>Acerca</h4>
+            <p>Aplicación desarrollada con el framework de desarrollo de
+            aplicaciones web Raals</p>
+          </div>
+          <div class="sidebar-module">
+            <h4>Archivo</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">2017</a></li>
+              <li><a href="#">2016</a></li>
+              <li><a href="#">2015</a></li>
+            </ol>
+          </div>
+        </div><!-- /.blog-sidebar -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
 
-<%= yield %>
+    <%= render 'layouts/shared/footer' %>
 
-</body>
+  </body>
 </html>

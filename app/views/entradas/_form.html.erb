@@ -1,0 +1,41 @@
+<%= form_for(@entrada) do |f| %>
+  <% if @entrada.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entrada.errors.count, "error") %> prohibited this entrada from being saved:</h2>
+
+      <ul>
+      <% @entrada.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.date_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :texto %><br>
+    <%= f.text_area :texto %>
+  </div>
+  <div class="field">
+    <%= f.label :visitas %><br>
+    <%= f.number_field :visitas %>
+  </div>
+  <div class="field">
+    <%= f.label :publicado %><br>
+    <%= f.check_box :publicado %>
+  </div>
+  <div class="field">
+    <%= f.label :seguridad_usuario_id %><br>
+    <%= f.text_field :seguridad_usuario_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

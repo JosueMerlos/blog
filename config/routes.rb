@@ -1,13 +1,25 @@
 Rails.application.routes.draw do
+
+  devise_for :seguridad_usuarios, controllers: {
+    sessions: 'seguridad_usuarios/sessions',
+    registrations: 'seguridad_usuarios/registrations'
+  }
   
+  resources :entradas
+  resources :seguridad_usuarios
+  
+  get 'practica_form_tag/index'
+
   get 'practica_render/index'
   get 'practica_render/index_dos'
 
-  resources :seguridad_usuarios
+  
   get 'home/index'
   get 'home/parametro'
+
   get 'ayuda/index'
   get 'ayuda/editar'
+
   get 'practica_ruby/index'
   get 'practica_variables/index'
 
