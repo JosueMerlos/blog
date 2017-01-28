@@ -1,7 +1,7 @@
 # controlador para el home
 class HomeController < ApplicationController
   def index
-  	@entradas = Entrada.all
+  	@entradas = Entrada.count_comentarios
   end
 
   def parametro

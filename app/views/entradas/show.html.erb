@@ -1,32 +1,39 @@
-<p>
-  <strong>Fecha:</strong>
-  <%= @entrada.fecha %>
-</p>
-
-<p>
-  <strong>Titulo:</strong>
-  <%= @entrada.titulo %>
-</p>
-
-<p>
-  <strong>Texto:</strong>
-  <%= @entrada.texto %>
-</p>
-
-<p>
-  <strong>Visitas:</strong>
-  <%= @entrada.visitas %>
-</p>
-
-<p>
-  <strong>Publicado:</strong>
-  <%= @entrada.publicado ? 'Si' : 'No' %>
-</p>
-
-<p>
-  <strong>Seguridad usuario:</strong>
-  <%= @entrada.seguridad_usuario.username %>
-</p>
+<% if notice.present? %>
+  <%= content_tag :div, notice, class: 'alert alert-success' %>
+<% end %>
+<h1>Entrada: <%= @entrada.id %></h1>
+<table class="table">
+  <tbody>
+    <tr>
+      <td>Fecha</td>
+      <td><%= @entrada.fecha %></td>
+    </tr>
+    <tr>
+      <td>Titulo</td>
+      <td><%= @entrada.titulo %></td>
+    </tr>
+    <tr>
+      <td>Texto</td>
+      <td><%= @entrada.texto %></td>
+    </tr>
+    <tr>
+      <td>Visitas</td>
+      <td><%= @entrada.visitas %></td>
+    </tr>
+    <tr>
+      <td>Publicado</td>
+      <td><%= @entrada.publicado ? 'Si' : 'No' %></td>
+    </tr>
+    <tr>
+      <td>Usuario</td>
+      <td><%= @entrada.seguridad_usuario.username %></td>
+    </tr>
+    <tr>
+      <td>Categoria</td>
+      <td><%= @entrada.category.nombre %></td>
+    </tr>
+  </tbody>
+</table>
 
 <%= link_to 'Editar', edit_entrada_path(@entrada) %> |
 <%= link_to 'Atras', entradas_path %>

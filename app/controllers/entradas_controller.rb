@@ -1,4 +1,4 @@
-class EntradasController < ApplicationController
+class EntradasController < PrivatesController
   layout 'administracion'
   before_action :set_entrada, only: [:show, :edit, :update, :destroy]
 

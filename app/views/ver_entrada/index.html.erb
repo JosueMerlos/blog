@@ -1,0 +1,18 @@
+<div class="blog-post">
+  <h2 class="blog-post-title"><%= @entrada.titulo %></h2>
+  <p class="blog-post-meta">
+  	<%= @entrada.fecha %> por <a href="#"><%= @entrada.seguridad_usuario.username %></a> |
+  	Categoria: <%= @entrada.category.nombre %> |
+  </p>
+	<p>
+		<%= @entrada.texto %>
+	</p>
+	<h3>Comentarios:</h3>
+		<article>
+			<% @entrada.comentarios.order(:fecha, :hora).each do |comentario| %>
+			<p class="blog-post-meta">Por: <%= comentario.seguridad_usuario.username %> | <%= comentario.fecha %></p>
+				<p><%= comentario.texto %></p>
+			<% end %>
+		</article>
+</div>
+<%= link_to "Atras", :back %>

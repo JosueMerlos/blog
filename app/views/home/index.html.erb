@@ -1,18 +1,14 @@
-<% @entradas.each do |entrada| %>	
+<% @entradas.each do |entrada| %>
 	<div class="blog-post">
-	  <h2 class="blog-post-title"><%= entrada.titulo %></h2>
+	  <h2 class="blog-post-title"><%= entrada.titulo.truncate(80) %></h2>
 	  <p class="blog-post-meta">
-	  	<%= entrada.fecha %> by <a href="#"><%= entrada.seguridad_usuario.username %></a> | Categoria: <%= entrada.category.nombre %>
+	  	<%= entrada.fecha %> por <a href="#"><%= entrada.username %></a> |
+	  	Categoria: <%= entrada.categoria %> |
+	  	Comentarios: <%= entrada.cantidad_comentarios %>
 	  </p>
 		<p>
-			<%= entrada.texto %>
+			<%= entrada.texto.truncate(250) %>
 		</p>
-		<h3>Comentarios:</h3>
-		<article>
-			<% entrada.comentarios.each do |comentario| %>
-				<p class="blog-post-meta">Por: <%= comentario.seguridad_usuario.username %> | <%= comentario.fecha %></p>
-				<p><%= comentario.texto %></p>
-			<% end %>
-		</article>
+		<%= link_to 'Ver mas...',  "ver_entrada/index/#{entrada.id}" %>
 	</div>
 <% end %>		

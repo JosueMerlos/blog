@@ -5,6 +5,7 @@ class SeguridadUsuario < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 	strip_attributes
+	has_paper_trail
 	# has_paper_trail ignore: [:nombres]
 	# has_paper_trail only: [:username]
 	# has_paper_trail on: [:update, :destroy]

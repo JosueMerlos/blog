@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class CategoriesController < PrivatesController
   layout 'administracion'
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 

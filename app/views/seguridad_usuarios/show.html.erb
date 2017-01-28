@@ -1,17 +1,27 @@
-<p>
-  <strong>Username:</strong>
-  <%= @seguridad_usuario.username %>
-</p>
-
-<p>
-  <strong>Nombres:</strong>
-  <%= @seguridad_usuario.nombres %>
-</p>
-
-<p>
-  <strong>Apellidos:</strong>
-  <%= @seguridad_usuario.apellidos %>
-</p>
+<% if notice.present? %>
+  <%= content_tag :div, notice, class: 'alert alert-success' %>
+<% end %>
+<h1>Usuario: <%= @seguridad_usuario.id %></h1>
+<table class="table">
+  <tbody>
+    <tr>
+      <td>Username</td>
+      <td><%= @seguridad_usuario.username %></td>
+    </tr>
+    <tr>
+      <td>Correo</td>
+      <td><%= @seguridad_usuario.email %></td>
+    </tr>
+    <tr>
+      <td>Nombres</td>
+      <td><%= @seguridad_usuario.nombres %></td>
+    </tr>
+    <tr>
+      <td>Apellidos</td>
+      <td><%= @seguridad_usuario.apellidos %></td>
+    </tr>
+  </tbody>
+</table>
 
 <%= link_to 'Editar', edit_seguridad_usuario_path(@seguridad_usuario) %> |
 <%= link_to 'Atras', seguridad_usuarios_path %>

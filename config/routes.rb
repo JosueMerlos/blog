@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   devise_for :seguridad_usuarios, controllers: {
     sessions: 'seguridad_usuarios/sessions',
     registrations: 'seguridad_usuarios/registrations'
@@ -9,10 +10,14 @@ Rails.application.routes.draw do
   resources :entradas
   resources :seguridad_usuarios
   
-  get 'practica_form_tag/index'
+  get 'ver_entrada/index'
+  get 'ver_entrada/index/:id' => 'ver_entrada#index'
 
+  get 'practica_form_tag/index'
   get 'practica_render/index'
   get 'practica_render/index_dos'
+  get 'practica_ruby/index'
+  get 'practica_variables/index'
 
   
   get 'home/index'
@@ -21,8 +26,6 @@ Rails.application.routes.draw do
   get 'ayuda/index'
   get 'ayuda/editar'
 
-  get 'practica_ruby/index'
-  get 'practica_variables/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
