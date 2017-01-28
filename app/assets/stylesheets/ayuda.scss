@@ -12,6 +12,14 @@ html, body {
   /*border: 1px solid black;*/
 }
 
+.navbar-nav > li > a {
+  color: #fff ;
+}
+.navbar-nav > li > a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
 #right-side {
   width: 80%;
   margin-top: 30px;

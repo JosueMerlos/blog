@@ -1,4 +1,5 @@
 class EntradasController < ApplicationController
+  layout 'administracion'
   before_action :set_entrada, only: [:show, :edit, :update, :destroy]
 
   # GET /entradas
@@ -25,10 +26,11 @@ class EntradasController < ApplicationController
   # POST /entradas.json
   def create
     @entrada = Entrada.new(entrada_params)
+    @entrada.seguridad_usuario_id = current_seguridad_usuario.id
 
     respond_to do |format|
       if @entrada.save
-        format.html { redirect_to @entrada, notice: 'Entrada was successfully created.' }
+        format.html { redirect_to @entrada, notice: 'Entrada fue creada satisfactoriamente.' }
         format.json { render :show, status: :created, location: @entrada }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class EntradasController < ApplicationController
   def update
     respond_to do |format|
       if @entrada.update(entrada_params)
-        format.html { redirect_to @entrada, notice: 'Entrada was successfully updated.' }
+        format.html { redirect_to @entrada, notice: 'Entrada fue actualizada satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @entrada }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class EntradasController < ApplicationController
   def destroy
     @entrada.destroy
     respond_to do |format|
-      format.html { redirect_to entradas_url, notice: 'Entrada was successfully destroyed.' }
+      format.html { redirect_to entradas_url, notice: 'Entrada fue eliminada satisfactoriamente.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +71,6 @@ class EntradasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entrada_params
-      params.require(:entrada).permit(:fecha, :titulo, :texto, :visitas, :publicado, :seguridad_usuario_id)
+      params.require(:entrada).permit(:fecha, :titulo, :texto, :visitas, :publicado, :seguridad_usuario_id, :category_id)
     end
 end

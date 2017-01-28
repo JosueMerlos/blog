@@ -26,6 +26,10 @@ SeguridadUsuario.create(id: 3,
                         email: 'publicador@gmail.com',
                         password: '12345678')
 
+Category.create(id: 1, nombre: 'Ruby')
+Category.create(id: 2, nombre: 'Tecnologia')
+Category.create(id: 3, nombre: 'Entretenimiento')
+
 Entrada.create(id: 1,
               fecha: Date.today,
               titulo: '14 cursos para aprender a crear videojuegos desde cero',
@@ -40,6 +44,7 @@ Entrada.create(id: 1,
                       'y te gustaría aprender a crear videojuegos, estas de suerte, pues hoy en Genbeta'\
                       'hemos recopilado una lista con varios cursos al respecto.',
               visitas: 0,
+              category_id: 3,
               seguridad_usuario_id: 2)
 
 Entrada.create(id: 2,
@@ -53,6 +58,7 @@ Entrada.create(id: 2,
                       'preguntado cual ha sido su experiencia, cuales son sus puntos fuertes y flojos, y cual ha sido el partido real que '\
                       'le han conseguido sacar.',
               visitas: 0,
+              category_id: 2,
               seguridad_usuario_id: 2)
 
 Comentario.create(id: 1,

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     registrations: 'seguridad_usuarios/registrations'
   }
   
+  resources :categories
   resources :entradas
   resources :seguridad_usuarios
   

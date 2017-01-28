@@ -25,6 +25,23 @@ body {
   border: 0;
 }
 
+h1 {
+  padding-left: 10px !important;
+  font-family: 'Open Sans', sans-serif !important;
+  color: #494949 !important;
+}
+
+p.title-dsc {
+  padding-left: 10px;
+}
+
+h2 {
+  border-left: 6px solid orange !important;
+  padding-left: 10px !important;
+  color: #494949 !important;
+}
+
+
 /*
  * Sidebar
  */

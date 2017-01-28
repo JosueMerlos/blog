@@ -3,7 +3,7 @@
     <nav class="blog-nav">
       <%= link_to 'Inicio', home_index_url, { class: 'blog-nav-item' } %>
       <%= link_to 'Ayuda', ayuda_index_path, { class: 'blog-nav-item' } %>
-      <%= link_to 'Usuarios', seguridad_usuarios_path, { class: 'blog-nav-item' } %>
+      <%= link_to 'Administración', entradas_path, { class: 'blog-nav-item' } %>
       <ul class="nav navbar-nav navbar-right">
         <% if seguridad_usuario_signed_in? %>
           <li><%= link_to current_seguridad_usuario.username, seguridad_usuario_path(current_seguridad_usuario) %></li>

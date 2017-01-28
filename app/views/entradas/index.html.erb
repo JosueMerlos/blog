@@ -1,14 +1,12 @@
-<h1>Listing Entradas</h1>
+<h1>Lista De Entradas</h1>
 
 <table class="table">
   <thead>
     <tr>
       <th>Fecha</th>
       <th>Titulo</th>
-      <th>Texto</th>
-      <th>Visitas</th>
       <th>Publicado</th>
-      <th>Seguridad usuario</th>
+      <th>Usuario</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,14 +15,30 @@
     <% @entradas.each do |entrada| %>
       <tr>
         <td><%= entrada.fecha %></td>
-        <td><%= entrada.titulo %></td>
-        <td><%= entrada.texto.truncate(50) %></td>
-        <td><%= entrada.visitas %></td>
+        <td><%= entrada.titulo.truncate(80) %></td>
         <td><%= entrada.publicado ? 'Si' : 'No' %></td>
         <td><%= entrada.seguridad_usuario.username %></td>
-        <td><%= link_to 'Show', entrada %></td>
-        <td><%= link_to 'Edit', edit_entrada_path(entrada) %></td>
-        <td><%= link_to 'Destroy', entrada, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <p data-placement="top" data-toggle="tooltip" title="Ver">
+            <%= link_to entrada, class: 'btn btn-primary btn-xs' do %>
+              <span class="glyphicon glyphicon-eye-open"></span>
+            <% end %>
+          </p>
+        </td>
+        <td>
+          <p data-placement="top" data-toggle="tooltip" title="Editar">
+            <%= link_to edit_entrada_path(entrada), class: 'btn btn-primary btn-xs' do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+            <% end %>
+          </p>
+        </td>
+        <td>
+          <p data-placement="top" data-toggle="tooltip" title="Eliminar">
+            <%= link_to entrada, class: 'btn btn-primary btn-xs', method: :delete, data: { confirm: 'Esta seguro?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+            <% end %>
+          </p>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +46,4 @@
 
 <br>
 
-<%= link_to 'New Entrada', new_entrada_path %>
+<%= link_to 'Nueva Entrada', new_entrada_path %>
